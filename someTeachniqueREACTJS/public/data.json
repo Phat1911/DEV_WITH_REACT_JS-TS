@@ -1,0 +1,11 @@
+[
+    { 
+        "title": "What is HTML?",
+        "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, labore!"
+    },
+
+    { 
+        "title": "What is Go?",
+        "content": "Lorem2, ipsum dolor sit amet consectetur adipisicing elit. Iste, labore!"
+    }
+]
