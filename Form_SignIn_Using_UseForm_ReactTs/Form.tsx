@@ -2,6 +2,7 @@ import { useEffect, useReducer, useRef, useState } from 'react';
 import './index.css'
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { FaRegEye } from 'react-icons/fa';
+import FormButton from './FormButton';
 
 interface ViewForm {
     name: string;
@@ -13,8 +14,7 @@ interface ViewForm {
 const Form = () => {
     const {
         register,
-        handleSubmit,
-        formState: {errors, isSubmitting}, 
+        formState: {errors}, 
     } = useForm <ViewForm> ({
         mode: 'onChange',
     });
@@ -23,6 +23,7 @@ const Form = () => {
     const [st2, setSt2] = useState <boolean> (false);
     const [bor, setBor] = useState <string[]> (Array(3).fill('none'));
     const [typeState, setType] = useState <string> ('password');
+    const pass = useRef <HTMLInputElement> (null);
 
     const handle = (): void => {
         setSt1(!st1);
@@ -34,7 +35,16 @@ const Form = () => {
         setBor(b);
     }
 
-    const onSubmit: SubmitHandler <ViewForm> = (data) => {
+    const myAction = async (formData: any) => {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            password: formData.get('password'),
+            gender: formData.get('gender'),
+        }
+
         console.log(data);
     }
 
@@ -63,7 +73,7 @@ const Form = () => {
                 }
 
                 {!st1 && 
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form action={myAction}>
                         <h1 style={{ textAlign: 'center' }}>Sign in</h1>
 
                         <input 
@@ -103,12 +113,11 @@ const Form = () => {
                                     value: /^(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/,
                                     message: 'Your password has to has at least 8 chars, 1 number, 1 special (@, #, ...)'
                                 }
-                            })}
+                            })} 
                         />  
+
                         <FaRegEye 
                             className='eye' 
-                            onMouseDown={() => setType('text')}
-                            onMouseUp={() => setType('password')}
                         />
                         <br />
 
@@ -131,7 +140,7 @@ const Form = () => {
 
                             { errors.gender && <p>{ errors.gender.message } <br /> </p> }
                         </div>
-                        <button className="btn" type='submit'>Submit</button>
+                        <FormButton />
                     </form>
                 }
             </div>
