@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('./assets/z6994366423781_3a5dba6b72c6feead5f958d4e07ef536.jpg');
+    background: url('./assets/z7001387788198_dce68b7634207dcc8e7dfa5eff011846.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -75,4 +75,9 @@ input {
 p {
     width: 275px;
     color: red;
+}
+
+.eye {
+    transform: translateX(-13px);
+    cursor: pointer;
 }

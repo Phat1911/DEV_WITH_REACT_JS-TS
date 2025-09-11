@@ -107,8 +107,7 @@ const Form = () => {
                         />  
                         <FaRegEye 
                             className='eye' 
-                            onMouseDown={() => setType('text')}
-                            onMouseUp={() => setType('password')}
+                            onClick={() => setType(typeState == 'text' ? 'password' : 'text')}
                         />
                         <br />
 
