@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./assets/z6994366423781_3a5dba6b72c6feead5f958d4e07ef536.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.box {
+    width: 400px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.719);
+    box-shadow: 0px 0px 20px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opt {
+    cursor: pointer;
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.opt:not(.opt:nth-of-type(2)):hover {
+    border-bottom: 1px solid white;
+}   
+
+.opt:not(.opt:nth-of-type(2)):active {
+    transform: scale(1.2);
+}
+
+input {
+    outline: none;
+    border: none;
+    background: transparent;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 3px;
+    padding-right: 20px;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+.gender > * {
+    margin-right: 10px;
+}
+
+.btn {
+    width: 100%;
+    background: red;
+    margin-top: 30px;
+    padding: 10px 40%;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: blue;
+}
+
+p {
+    width: 275px;
+    color: red;
+}
