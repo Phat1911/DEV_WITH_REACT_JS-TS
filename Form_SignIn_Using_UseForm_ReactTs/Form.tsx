@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useRef, useState } from 'react';
 import './index.css'
 import { useForm, type SubmitHandler } from 'react-hook-form';
+import { FaRegEye } from 'react-icons/fa';
 
 interface ViewForm {
     name: string;
@@ -21,6 +22,7 @@ const Form = () => {
     const [st1, setSt1] = useState <boolean> (true);
     const [st2, setSt2] = useState <boolean> (false);
     const [bor, setBor] = useState <string[]> (Array(3).fill('none'));
+    const [typeState, setType] = useState <string> ('password');
 
     const handle = (): void => {
         setSt1(!st1);
@@ -91,7 +93,7 @@ const Form = () => {
                         { errors.email && <p>{ errors.email.message } <br /> </p> }
 
                         <input 
-                            type="password" 
+                            type={typeState} 
                             placeholder='Password'
                             style={{ borderBottom: bor[2] }}
                             onClick={() => handleClick(2)}
@@ -102,7 +104,13 @@ const Form = () => {
                                     message: 'Your password has to has at least 8 chars, 1 number, 1 special (@, #, ...)'
                                 }
                             })}
-                        /> <br />
+                        />  
+                        <FaRegEye 
+                            className='eye' 
+                            onMouseDown={() => setType('text')}
+                            onMouseUp={() => setType('password')}
+                        />
+                        <br />
 
                         { errors.password && <p>{ errors.password.message } <br /> </p> }
                         
