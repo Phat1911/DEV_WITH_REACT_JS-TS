@@ -1,12 +1,14 @@
-import { useFormStatus } from 'react-dom'
+import { useFormStatus } from "react-dom"
 import './index.css'
+import { useContext, useEffect } from "react"
+import { MyCt } from "./Form"
 
 const FormButton = () => {
-    const { pending } = useFormStatus();
+    const { isSubmitting } = useContext(MyCt);
 
     return (
-        <button className='btn' type='submit' disabled={pending}>
-            {pending ? "Submitting...." : "Submit"}
+        <button type='submit' disabled={isSubmitting} className="btn">
+            { isSubmitting ? 'Submitting...' : 'Submit' }
         </button>
     )
 }

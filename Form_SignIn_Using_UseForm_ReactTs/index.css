@@ -81,3 +81,10 @@ p {
     transform: translateX(-13px);
     cursor: pointer;
 }
+
+.back {
+    margin-top: 20px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+}
