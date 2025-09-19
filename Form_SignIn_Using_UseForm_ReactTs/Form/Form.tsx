@@ -35,6 +35,7 @@ const Form = ({ children }: MyProviderProps) => {
     const [st1, setSt1] = useState <boolean> (true);
     const [st2, setSt2] = useState <boolean> (false);
     const [isSubmitting, setIsSubmitting] = useState <boolean> (false);
+
     const [content, setContent] = useState <string> ('Sign In');
     const [bor, setBor] = useState <string[]> (Array(3).fill('none'));
     const [typeState, setType] = useState <string> ('password');
@@ -51,6 +52,8 @@ const Form = ({ children }: MyProviderProps) => {
         await new Promise (resolve => {
             setTimeout(() => {
                 setIsSubmitting(false);
+                setSt2(true);
+                setContent('Log in');
                 resolve(true);
             }, 2000);
         })
