@@ -1,4 +1,5 @@
-# This is some simple project i made when i learn React. Each project in this responsitory were built by myself and it show my roadmap react and it's all i know about ReactJS
+# Description: 
+  This is some simple project i made when i learn React. Each project in this responsitory were built by myself and it show my roadmap react and it's all i know about ReactJS
 
 ## To use the project you have to install:
   ### First install gsap: 
