@@ -3,10 +3,10 @@
 
 ## To use the project you have to install:
   ### First install gsap: 
-    cmd: `npm install gsap or yarn add gsap` 
+    cmd: npm install gsap or yarn add gsap
   ### Second install tailwindcss: 
     cmd:
-      `npm install -D tailwindcss@3 postcss autoprefixer`
-      `npx tailwindcss init -p`
+      npm install -D tailwindcss@3 postcss autoprefixer
+      npx tailwindcss init -p
   ### Finally:
     Copy a project what u want to use into your vs code
